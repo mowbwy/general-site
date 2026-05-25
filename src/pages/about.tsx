@@ -6,8 +6,7 @@ export default function About() {
     <div>
       <h1>About Page</h1>
       <Link to="/">Back Home</Link>
-      <p>This webpage has been made for Joseph Alvayero.
-        The site is still under construction though.
+      <p>This is my second website. The site is still under construction though. 
       </p>
     </div>
   );
