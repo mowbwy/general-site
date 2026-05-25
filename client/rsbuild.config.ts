@@ -1,8 +1,9 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
 
-export default {
+export default defineConfig({
+  plugins: [pluginReact()],
   html: {
     base: "/general-site/",
   },
-};
+});
