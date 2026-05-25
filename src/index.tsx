@@ -12,32 +12,38 @@ export async function searchItems(query: string) {
   return res.json();
 }
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "",
+      element: <App />,
+    },
+    {
+      path: "contact",
+      element: <Contact />,
+    },
+    {
+      path: "about",
+      element: <About />,
+    },
+    {
+      path: "login",
+      element: <Login />,
+    },
+    {
+      path: "home",
+      element: <Home />,
+    },
+    {
+      path: "user",
+      element: <Users />,
+    },
+  ],
   {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/user",
-    element: <Users />,
-  },
-]);
+    basename: "/general-site",
+  }
+);
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
