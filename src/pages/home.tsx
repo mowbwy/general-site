@@ -13,7 +13,7 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const debounceTimer = useRef<NodeJS.Timeout | null>(null);
 
   // Debounced search function
@@ -100,17 +100,19 @@ export default function Home() {
                 Found {results.length} result{results.length !== 1 ? "s" : ""}
               </h3>
               <div style={{ display: "grid", gap: "12px" }}>
-                {results.map((item) => (
+                {results.map((item, index) => (
                   <div
                     key={item._id || Math.random()}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
                     style={{
                       padding: "12px",
                       border: "1px solid #e0e0e0",
                       borderRadius: "4px",
-                      backgroundColor: "#f9f9f9",
-                      hover: {
-                        backgroundColor: "#f0f0f0",
-                      },
+                      backgroundColor:
+                        hoveredIndex === index ? "#f0f0f0" : "#f9f9f9",
+                      cursor: "pointer",
+                      transition: "background-color 0.2s",
                     }}
                   >
                     <h4 style={{ margin: "0 0 8px 0", color: "#222" }}>
