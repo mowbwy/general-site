@@ -1,22 +1,18 @@
 import React from "react";
-import { searchItems } from "../api/search";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { pages, type Page } from "../data/pages";
 
-interface SearchResult {
-  _id?: string;
-  name: string;
-  description?: string;
-}
+type SearchResult = Page;
 
 export default function Home() {
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const debounceTimer = useRef<NodeJS.Timeout | null>(null);
 
-  // Debounced search function
+  // Search pages
   useEffect(() => {
     if (debounceTimer.current) {
       clearTimeout(debounceTimer.current);
@@ -27,17 +23,14 @@ export default function Home() {
       return;
     }
 
-    debounceTimer.current = setTimeout(async () => {
-      setIsLoading(true);
-      try {
-        const data = await searchItems(query);
-        setResults(Array.isArray(data) ? data : []);
-      } catch (error) {
-        console.error("Search error:", error);
-        setResults([]);
-      } finally {
-        setIsLoading(false);
-      }
+    debounceTimer.current = setTimeout(() => {
+      const lowerQuery = query.toLowerCase();
+      const filtered = pages.filter(
+        (page) =>
+          page.title.toLowerCase().includes(lowerQuery) ||
+          page.description.toLowerCase().includes(lowerQuery)
+      );
+      setResults(filtered);
     }, 300); // 300ms debounce delay
 
     return () => {
@@ -46,6 +39,12 @@ export default function Home() {
       }
     };
   }, [query]);
+
+  const handleResultClick = (path: string) => {
+    navigate(path);
+    setQuery("");
+    setResults([]);
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -82,12 +81,7 @@ export default function Home() {
             onBlur={(e) => {
               e.currentTarget.style.borderColor = "#ddd";
             }}
-          />
-        </div>
-
-        {/* Loading Indicator */}
-        {isLoading && (
-          <p style={{ color: "#666", fontSize: "14px", margin: "10px 0" }}>
+<p style={{ color: "#666", fontSize: "14px", margin: "10px 0" }}>
             Searching...
           </p>
         )}
@@ -107,6 +101,12 @@ export default function Home() {
                     onMouseLeave={() => setHoveredIndex(null)}
                     style={{
                       padding: "12px",
+                      border: id}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    onClick={() => handleResultClick(item.path)}
+                    style={{
+                      padding: "12px",
                       border: "1px solid #e0e0e0",
                       borderRadius: "4px",
                       backgroundColor:
@@ -116,29 +116,22 @@ export default function Home() {
                     }}
                   >
                     <h4 style={{ margin: "0 0 8px 0", color: "#222" }}>
-                      {item.name}
+                      {item.title}
                     </h4>
-                    {item.description && (
-                      <p
-                        style={{
-                          margin: "0",
-                          color: "#666",
-                          fontSize: "14px",
-                        }}
-                      >
-                        {item.description}
-                      </p>
-                    )}
+                    <p
+                      style={{
+                        margin: "0",
+                        color: "#666",
+                        fontSize: "14px",
+                      }}
+                    >
+                      {item.description}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
-          ) : query && !isLoading ? (
-            <p style={{ color: "#999", fontSize: "14px" }}>
-              No results found for "{query}"
-            </p>
-          ) : null}
-        </div>
+          ) : query
       </div>
     </div>
   );
