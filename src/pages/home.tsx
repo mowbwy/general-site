@@ -12,7 +12,6 @@ export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const debounceTimer = useRef<NodeJS.Timeout | null>(null);
 
-  // Search pages
   useEffect(() => {
     if (debounceTimer.current) {
       clearTimeout(debounceTimer.current);
@@ -31,7 +30,7 @@ export default function Home() {
           page.description.toLowerCase().includes(lowerQuery)
       );
       setResults(filtered);
-    }, 300); // 300ms debounce delay
+    }, 300);
 
     return () => {
       if (debounceTimer.current) {
@@ -57,12 +56,11 @@ export default function Home() {
       <h1>Home</h1>
       <Link to="/user">View Users</Link>
 
-      {/* Search Bar */}
       <div style={{ marginTop: "30px", marginBottom: "20px" }}>
         <div style={{ display: "flex", gap: "8px", marginBottom: "15px" }}>
           <input
             type="text"
-            placeholder="Search items by name or description..."
+            placeholder="Search pages by title or description..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -81,12 +79,9 @@ export default function Home() {
             onBlur={(e) => {
               e.currentTarget.style.borderColor = "#ddd";
             }}
-<p style={{ color: "#666", fontSize: "14px", margin: "10px 0" }}>
-            Searching...
-          </p>
-        )}
+          />
+        </div>
 
-        {/* Results Section */}
         <div style={{ marginTop: "20px" }}>
           {results.length > 0 ? (
             <div>
@@ -96,12 +91,7 @@ export default function Home() {
               <div style={{ display: "grid", gap: "12px" }}>
                 {results.map((item, index) => (
                   <div
-                    key={item._id || Math.random()}
-                    onMouseEnter={() => setHoveredIndex(index)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                    style={{
-                      padding: "12px",
-                      border: id}
+                    key={item.id}
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
                     onClick={() => handleResultClick(item.path)}
@@ -131,7 +121,12 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          ) : query
+          ) : query ? (
+            <p style={{ color: "#999", fontSize: "14px" }}>
+              No results found for "{query}"
+            </p>
+          ) : null}
+        </div>
       </div>
     </div>
   );
