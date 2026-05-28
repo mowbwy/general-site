@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Backend Frontend Test</title>
+    <style>body{font-family:Arial,Helvetica,sans-serif;padding:2rem}</style>
+  </head>
+  <body>
+    <h1>Backend Frontend Test</h1>
+    <p id="status">Fetching message from backend...</p>
+    <script>
+      // Uses same-origin relative URL so no CORS needed when served from the Django dev server
+      fetch('/api/hello/')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('status').textContent = data.message;
+        })
+        .catch(err => {
+          document.getElementById('status').textContent = 'Error: ' + err;
+          console.error(err);
+        });
+    </script>
+  </body>
+</html>

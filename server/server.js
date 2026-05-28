@@ -7,8 +7,8 @@ app.use(cors());
 app.use(express.json());
 
 // 1. Connect to MongoDB
-const mongodbUri = (typeof process !== "undefined" && process.env?.MONGODB_URI?.trim()) ? process.env.MONGODB_URI : "mongodb://127.0.0.1:27017/searchdb";
-console.log("MONGODB_URI env value:", (typeof process !== "undefined" ? process.env?.MONGODB_URI : undefined));
+const mongodbUri = (typeof globalThis.process !== "undefined" && globalThis.process?.env?.MONGODB_URI?.trim()) ? globalThis.process.env.MONGODB_URI : "mongodb://127.0.0.1:27017/searchdb";
+console.log("MONGODB_URI env value:", (typeof globalThis.process !== "undefined" ? globalThis.process?.env?.MONGODB_URI : undefined));
 console.log("MongoDB connection URI:", mongodbUri);
 mongoose.connect(mongodbUri)
   .then(() => console.log(`MongoDB connected to ${mongodbUri}`))

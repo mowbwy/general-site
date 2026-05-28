@@ -16,6 +16,25 @@ Start the dev server, and the app will be available at [http://localhost:3000](h
 npm run dev
 ```
 
+## Backend
+
+The backend is a minimal Django REST Framework project located in `backend/`.
+
+Install Python dependencies and run the backend server:
+
+```bash
+python -m pip install -r backend/requirements.txt
+python backend/manage.py runserver 8000
+```
+
+The sample API endpoint is available at `http://127.0.0.1:8000/api/hello/`.
+
+Run backend tests with:
+
+```bash
+python backend/manage.py test api
+```
+
 Build the app for production:
 
 ```bash
