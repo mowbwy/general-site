@@ -8,6 +8,7 @@ export default defineConfig(
     assetPrefix: "/general-site/",
 },html: {
   title: 'General Site',
+  favicon: '/public/favicon.png',
 }
 }
 );
