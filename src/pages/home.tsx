@@ -10,7 +10,7 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const debounceTimer = useRef<NodeJS.Timeout | null>(null);
+  const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (debounceTimer.current) {
@@ -55,7 +55,9 @@ export default function Home() {
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
       <h1>Home</h1>
       <Link to="/user">View Users</Link>
-
+      <Link to="/about">View the About section</Link>
+      <Link to="/contact">View Contact Information</Link>
+      <Link to="/user">View Login</Link>
       <div style={{ marginTop: "30px", marginBottom: "20px" }}>
         <div style={{ display: "flex", gap: "8px", marginBottom: "15px" }}>
           <input
