@@ -7,7 +7,7 @@ export default function About() {
       <h1>Contact Page</h1>
       <Link to="/">Back Home</Link>
       <p>You can contact me at many e-mails and
-        a phone number. </p>
+        a phone number. I also have social media accounts where you can find me. </p>
     </div>
   );
 }
