@@ -19,21 +19,21 @@ export const pages: Page[] = [
     path: "/about",
   },
   {
-    id: "contact",
-    title: "Contact",
-    description: "Get in touch with us. Contact page for inquiries and messages.",
+    id: "Hero",
+    title: "Hero",
+    description: "Learn more about our hero. This is the hero section of the website.",
+    path: "/Hero",
+  },
+  {
+    id: "Projects",
+    title: "Projects",
+    description: "View our projects. Browse all projects on the platform.",
+    path: "/Projects",
+  },
+  {
+    id: "Contacts",
+    title: "Contacts",
+    description: "View contacts. Browse all contacts on the platform.",
     path: "/contact",
-  },
-  {
-    id: "login",
-    title: "Login",
-    description: "Sign in to your account. User authentication and login page.",
-    path: "/login",
-  },
-  {
-    id: "users",
-    title: "Users",
-    description: "View users. Browse all users on the platform.",
-    path: "/user",
   },
 ];

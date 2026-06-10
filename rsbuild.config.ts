@@ -5,10 +5,10 @@ export default defineConfig(
   {
   plugins: [pluginReact()], 
   output: {
-    assetPrefix: "/general-site/",
+    assetPrefix: "/general-site",
 },html: {
   title: 'General Site',
-  favicon: '/public/favicon.png',
+  favicon: 'public/favicon.png',
 }
 }
 );
