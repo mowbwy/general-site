@@ -12,7 +12,7 @@ export default function Users() {
 
   return (
     <div>
-      <h1>Users</h1><br/>
+      <h1>Projects</h1><br/>
       <Link to="/">Back Home</Link>
       {users.map((u: any) => (
         <p key={u._id}>{u.name}</p>
