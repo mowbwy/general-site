@@ -3,9 +3,10 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/about";
 import Contact from "./pages/contact";
-import Login from "./pages/login";
+import Hero from "./pages/Hero";
 import Home from "./pages/home";
-import Users from "./pages/user";
+import Users from "./pages/Projects";
+import Projects from "./pages/Projects";
 export async function searchItems(query: string) {
   const res = await fetch(`http://localhost:5000/api/search?q=${query}`);
   return res.json();
@@ -30,12 +31,12 @@ const router = createBrowserRouter(
       element: <Contact />,
     },
     {
-      path: "login",
-      element: <Login />,
+      path: "Hero",
+      element: <Hero />,
     },
     {
-      path: "user",
-      element: <Users />,
+      path: "Projects",
+      element: <Projects />,
     },
   ],
   {
