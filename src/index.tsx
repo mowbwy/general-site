@@ -5,7 +5,6 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Hero from "./pages/Hero";
 import Home from "./pages/home";
-import Users from "./pages/Projects";
 import Projects from "./pages/Projects";
 export async function searchItems(query: string) {
   const res = await fetch(`http://localhost:5000/api/search?q=${query}`);
