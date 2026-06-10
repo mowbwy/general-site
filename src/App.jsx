@@ -8,7 +8,8 @@ export default function App() {
       <Link to="/about">Go to About</Link><br />
       <Link to="/contact">Go to Contact</Link><br />
       <Link to="/home">Go to Home</Link><br />
-      <Link to="/user">Go to Users</Link>
+      <Link to="/Hero">Go to Hero</Link><br />
+      <Link to="/Projects">Go to Projects</Link><br />
     </div>
   );
 }
