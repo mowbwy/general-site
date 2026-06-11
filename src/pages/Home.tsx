@@ -1,4 +1,4 @@
-export default function GoogleStyleHome() {
+export default function Home() {
   return (
     <div
       style={{
