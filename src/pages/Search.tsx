@@ -53,11 +53,9 @@ export default function Search() {
 
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <h1>Home</h1>
-      <Link to="/Hero">View Hero Section</Link><br />
-      <Link to="/about">View the About section</Link><br />
-      <Link to="/contact">View Contact Information</Link><br />
-      <Link to="/Projects">View Projects</Link><br />
+      <h1>Search</h1>
+      <Link to="/">Back Home</Link><br />
+<p>This is the search page. You can search for anything you need on this site.</p>
       <div style={{ marginTop: "30px", marginBottom: "20px" }}>
         <div style={{ display: "flex", gap: "8px", marginBottom: "15px" }}>
           <input
