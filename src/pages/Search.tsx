@@ -5,7 +5,7 @@ import { pages, type Page } from "../data/pages";
 
 type SearchResult = Page;
 
-export default function Home() {
+export default function Search() {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
