@@ -3,8 +3,42 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npm --prefix frontend run build && npm --prefix server run build",
+    "build": "npm --prefix frontend run build",
     "build:frontend": "npm --prefix frontend run build",
     "build:server": "npm --prefix server run build"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^2.0.12",
+    "@rsbuild/plugin-react": "^2.0.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/react-router-dom": "^5.3.3",
+    "autoprefixer": "^10.5.0",
+    "hint": "^7.1.13",
+    "postcss": "^8.5.15",
+    "postcss-preset-env": "^11.3.0",
+    "tailwindcss": "^4.3.0"
+  },
+  "hintConfig": {
+    "connector": {
+      "name": "connectorName"
+    },
+    "formatters": [
+      "formatterName"
+    ],
+    "parsers": [
+      "parserName"
+    ],
+    "hints": {
+      "hint1": "error",
+      "hint2": "warning",
+      "hint3": "off"
+    },
+    "hintsTimeout": 120000
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.17.0"
   }
 }

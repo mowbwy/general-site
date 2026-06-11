@@ -25,7 +25,7 @@ export default function App() {
           letterSpacing: "-1px",
         }}
       >
-        General<span style={{ color: "#1A73E8" }}>Site</span>
+        Joseph Alvayero's<span style={{ color: "#1A73E8" }}>Website</span>
       </h1>
 
       {/* Tagline */}

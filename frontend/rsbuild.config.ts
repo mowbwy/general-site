@@ -6,9 +6,12 @@ export default defineConfig({
   output: {
     assetPrefix: "/",
   },
-  html: {    
+  html: {
+    title: 'General Site',
     meta: {
-      viewport: false
-    }},
-  
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    },
+    template: './public/index.html',
+  },
 });
