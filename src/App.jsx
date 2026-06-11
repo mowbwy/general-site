@@ -10,6 +10,7 @@ export default function App() {
       <Link to="/Search">Go to Search</Link><br />
       <Link to="/Hero">Go to Hero</Link><br />
       <Link to="/Projects">Go to Projects</Link><br />
+      <Link to="/Resume">Go to Resume</Link><br />
     </div>
   );
 }
