@@ -7,7 +7,7 @@ export default function App() {
       <h1>Home Page</h1>
       <Link to="/about">Go to About</Link><br />
       <Link to="/contact">Go to Contact</Link><br />
-      <Link to="/home">Go to Home</Link><br />
+      <Link to="/Search">Go to Search</Link><br />
       <Link to="/Hero">Go to Hero</Link><br />
       <Link to="/Projects">Go to Projects</Link><br />
     </div>
