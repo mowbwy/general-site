@@ -3,17 +3,18 @@ import { Link } from "react-router-dom";
 
 export default function App() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        paddingTop: "120px",
-        backgroundColor: "#ffffff",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
+<div
+  style={{
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingTop: "120px",
+    backgroundColor: "#ffffff",
+    fontFamily: "Arial, sans-serif",
+  }}
+>
       {/* Logo */}
       <h1
         style={{
@@ -37,7 +38,6 @@ export default function App() {
       >
         A clean, simple Google‑style homepage
       </p>
-
       {/* Navigation Buttons */}
       <div
         style={{
@@ -56,16 +56,16 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <footer
-        style={{
-          position: "absolute",
-          bottom: "20px",
-          fontSize: "14px",
-          color: "#5f6368",
-        }}
-      >
-        Built by Joseph • Inspired by Google
-      </footer>
+<footer
+  style={{
+    paddingBottom: "20px",
+    fontSize: "14px",
+    color: "#5f6368",
+  }}
+>
+  Built by Joseph • Inspired by Google
+</footer>
+
     </div>
   );
 }
