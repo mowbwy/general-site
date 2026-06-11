@@ -5,7 +5,7 @@ import App from "./App";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Hero from "./pages/Hero";
-import Home from "./pages/home";
+import Home from "./pages/Search";
 import Projects from "./pages/Projects";
 
 const router = createBrowserRouter(
@@ -14,7 +14,7 @@ const router = createBrowserRouter(
     { path: "about", element: <About /> },
     { path: "contact", element: <Contact /> },
     { path: "hero", element: <Hero /> },
-    { path: "home", element: <Home /> },
+    { path: "search", element: <search /> },
     { path: "projects", element: <Projects /> },
   ],
   {
