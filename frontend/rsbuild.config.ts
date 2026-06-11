@@ -8,7 +8,7 @@ export default defineConfig(
     assetPrefix: "/general-site",
 },html: {
   title: 'General Site',
-  favicon: 'public/favicon.png',
+  // favicon removed: ensure `public/favicon.png` exists if you want a favicon
 }
 }
 );
