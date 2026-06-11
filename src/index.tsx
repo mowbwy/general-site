@@ -7,7 +7,7 @@ import Contact from "./pages/contact";
 import Hero from "./pages/Hero";
 import Search from "./pages/Search";
 import Projects from "./pages/Projects";
-import Home from "./pages/home";
+import GSearch from "./pages/GSearch";
 
 const router = createBrowserRouter(
   [
@@ -17,7 +17,7 @@ const router = createBrowserRouter(
     { path: "hero", element: <Hero /> },
     { path: "search", element: <Search /> },
     { path: "projects", element: <Projects /> },
-    { path: "home", element: <Home /> }
+    { path: "gsearch", element: <GSearch /> }
   ],
   {
     basename: "/general-site",

@@ -7,10 +7,10 @@ export default function App() {
       <h1>Index</h1>
       <Link to="/about">Go to About</Link><br />
       <Link to="/contact">Go to Contact</Link><br />
-      <Link to="/Search">Go to Search</Link><br />
+      <Link to="/Search">Search this site</Link><br />
       <Link to="/Hero">Go to Hero</Link><br />
       <Link to="/Projects">Go to Projects</Link><br />
-      <Link to="/Home">Go to Home</Link><br />
+      <Link to="/GSearch">Search the Internet</Link><br />
     </div>
   );
 }
