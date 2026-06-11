@@ -1,20 +1,15 @@
-# Use an official Node image to run the dev environment
 FROM node:20-slim
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package files first
 COPY package*.json .
-
-# Install your React dependencies
 RUN npm install
 
-# Copy the rest of your frontend code
 COPY . .
+RUN npx rsbuild build
 
-# Expose the port your React app runs on (Vite defaults to 5173, Create-React-App to 3000)
+RUN npm install -g serve
+
 EXPOSE 5173
 
-# Command to launch the development server
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["serve", "-s", "dist", "-l", "5173"]

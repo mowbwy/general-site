@@ -1,14 +1,14 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
 
-export default defineConfig(
-  {
-  plugins: [pluginReact()], 
+export default defineConfig({
+  plugins: [pluginReact()],
   output: {
-    assetPrefix: "/general-site",
-},html: {
-  title: 'General Site',
-  // favicon removed: ensure `public/favicon.png` exists if you want a favicon
-}
-}
-);
+    assetPrefix: "/",
+  },
+  html: {    
+    meta: {
+      viewport: false
+    }},
+  
+});
