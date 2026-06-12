@@ -4,7 +4,7 @@ import { pluginReact } from '@rsbuild/plugin-react';
 export default defineConfig({
   plugins: [pluginReact()],
   output: {
-    assetPrefix: "/general-site/",
+    assetPrefix: "/general-site",
   },
   html: {
     title: 'Joseph Alvayero Portfolio',
