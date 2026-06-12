@@ -7,7 +7,7 @@ export default defineConfig({
     assetPrefix: "/",
   },
   html: {
-    title: 'General Site',
+    title: 'Joseph Alvayero Portfolio',
     meta: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
