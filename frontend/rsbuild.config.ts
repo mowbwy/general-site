@@ -14,4 +14,9 @@ export default defineConfig({
     },
     template: './public/index.html',
   },
+  source: {
+    entry: {
+      index: './src/App.jsx',
+    },
+  },
 });
