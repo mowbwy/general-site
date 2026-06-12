@@ -16,7 +16,8 @@ export default defineConfig({
   },
   source: {
     entry: {
-      index: './src/App.jsx',
+      index: './src/index.tsx',
     },
   },
+
 });
