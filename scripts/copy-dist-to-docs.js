@@ -3,7 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const distDir = join(__dirname, "..", "dist");
+const distDir = join(__dirname, "..", "frontend", "dist");
 const docsDir = join(__dirname, "..", "docs");
 
 async function copyDir(src, dest) {
