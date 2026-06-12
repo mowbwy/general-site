@@ -20,7 +20,7 @@ const router = createBrowserRouter(
     { path: "gsearch", element: <GSearch /> }
   ],
   {
-    basename: "/",
+    basename: "/general-site",
   }
 );
 
