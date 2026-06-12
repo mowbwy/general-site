@@ -48,11 +48,11 @@ export default function App() {
           maxWidth: "300px",
         }}
       >
-        <NavButton to="/about" label="About" />
-        <NavButton to="/contact" label="Contact" />
-        <NavButton to="/search" label="Search" />
-        <NavButton to="/hero" label="Hero" />
-        <NavButton to="/projects" label="Projects" />
+        <NavButton to="about" label="About" />
+        <NavButton to="contact" label="Contact" />
+        <NavButton to="search" label="Search" />
+        <NavButton to="hero" label="Hero" />
+        <NavButton to="projects" label="Projects" />
       </div>
 
       {/* Footer */}
