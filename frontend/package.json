@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "rsbuild build && node scripts/copy-dist-to-docs.js",
+  "build": "rsbuild build",
     "copy:docs": "node ../scripts/copy-dist-to-docs.js",
     "check": "biome check --write",
     "dev": "rsbuild --open",
