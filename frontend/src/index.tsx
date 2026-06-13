@@ -11,13 +11,14 @@ import GSearch from "./pages/GSearch";
 
 const router = createBrowserRouter(
   [
-    { path: "*", element: <App /> },
     { path: "about", element: <About /> },
     { path: "contact", element: <Contact /> },
     { path: "hero", element: <Hero /> },
     { path: "search", element: <Search /> },
     { path: "projects", element: <Projects /> },
-    { path: "gsearch", element: <GSearch /> }
+    { path: "gsearch", element: <GSearch /> },
+    { path: "*", element: <App /> },
+
   ],
   {
     basename: "/general-site",
