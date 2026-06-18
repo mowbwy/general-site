@@ -7,7 +7,7 @@
     "build": "rsbuild build",
     "copy:docs": "node ../scripts/copy-dist-to-docs.js",
     "check": "biome check --write",
-    "dev": "rsbuild --open",
+    "dev": "npx rsbuild --open",
     "format": "biome format --write",
     "lint": "rslint",
     "preview": "rsbuild preview",
@@ -24,7 +24,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.14",
     "@eslint/js": "^10.0.1",
-    "@rsbuild/core": "^2.0.12",
+    "@rsbuild/core": "^2.0.15",
     "@rsbuild/plugin-babel": "^1.1.2",
     "@rsbuild/plugin-react": "^2.0.1",
     "@rslint/core": "^0.5.1",

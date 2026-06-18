@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function About() {
+export default function about() {
   return (
     <section className="about-section">
       <h2 className="about-title">About Me</h2>
