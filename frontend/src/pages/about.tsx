@@ -7,6 +7,8 @@ export default function About() {
     <div className="about-wrapper fade-in">
       <div className="about-header">
         <h1>About Me</h1>
+              <Link to="/">Back Home</Link>
+        
         <p className="subtitle">Software Engineering Student • Web Developer • Problem Solver</p>
       </div>
 
