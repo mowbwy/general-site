@@ -5,7 +5,7 @@ export default function about() {
   return (
     <section className="about-section">
       <h2 className="about-title">About Me</h2>
-
+      <Link to="/">Back Home</Link>
       <p className="about-text">
         I’m Joseph Alvayero, a software engineering student and developer who
         enjoys building clean, functional, and creative web experiences. I love
