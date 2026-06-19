@@ -1,27 +1,58 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./about.css";
 
-export default function about() {
+export default function About() {
   return (
-    <section className="about-section">
-      <h2 className="about-title">About Me</h2>
-      <Link to="/">Back Home</Link>
-      <p className="about-text">
-        I’m Joseph Alvayero, a software engineering student and developer who
-        enjoys building clean, functional, and creative web experiences. I love
-        experimenting with tools like Rsbuild and exploring new ways to bring
-        ideas to life through code.
-      </p>
+    <div className="about-wrapper fade-in">
+      <div className="about-header">
+        <h1>About Me</h1>
+        <p className="subtitle">Software Engineering Student • Web Developer • Problem Solver</p>
+      </div>
 
-      <p className="about-text">
-        I have hands‑on experience with web development, Java, and Python, and
-        I’m always learning new technologies to expand my skill set.
-      </p>
+      <div className="about-content">
+        <img
+          src="/profile.jpg"
+          alt="Profile"
+          className="profile-pic"
+        />
 
-      <p className="about-text">
-        This site is still growing — I’m adding more projects, UI experiments,
-        and improvements as I continue learning.
-      </p>
-    </section>
+        <p>
+          Hey, I’m <span className="highlight">Joseph Alvayero</span> — a software engineering student
+          who loves building clean, functional, and creative web experiences. I enjoy turning ideas
+          into real, working applications and constantly improving my skills through hands‑on projects.
+        </p>
+
+        <p>
+          I’ve worked with tools like <span className="highlight">React</span>, <span className="highlight">Rsbuild</span>,
+          <span className="highlight"> JavaScript</span>, <span className="highlight">Python</span>, and <span className="highlight">Java</span>.
+          I also hold a Python certificate from Coursera and continue expanding my knowledge in
+          software engineering, machine learning, and modern web development.
+        </p>
+
+        <div className="section">
+          <h2 className="section-title">Tech Stack</h2>
+          <div className="badges">
+            <div className="badge">JavaScript</div>
+            <div className="badge">React</div>
+            <div className="badge">Rsbuild</div>
+            <div className="badge">Python</div>
+            <div className="badge">Java</div>
+            <div className="badge">GitHub Pages</div>
+          </div>
+        </div>
+
+        <div className="section">
+          <h2 className="section-title">What I’m Working On</h2>
+          <div className="card">
+            <p>
+              I’m expanding this portfolio with more projects, UI experiments, and interactive components.
+              I’m also exploring backend development and sharpening my problem‑solving skills through
+              real‑world challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
