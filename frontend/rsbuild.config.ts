@@ -4,8 +4,8 @@ import { pluginReact } from '@rsbuild/plugin-react';
 export default defineConfig({
   plugins: [pluginReact()],
   output: {
-    assetPrefix: "/",
-    publicPath: "/",
+    assetPrefix: "/general-site/",
+    publicPath: "/general-site/",
   },
   html: {
     title: 'Joseph Alvayero Portfolio',
