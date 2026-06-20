@@ -53,6 +53,7 @@ export default function App() {
         <NavButton to="/search" label="Search" />
         <NavButton to="/hero" label="Hero" />
         <NavButton to="/projects" label="Projects" />
+        
       </div>
 
       {/* Footer */}

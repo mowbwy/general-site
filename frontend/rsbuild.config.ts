@@ -4,8 +4,8 @@ import { pluginReact } from '@rsbuild/plugin-react';
 export default defineConfig({
   plugins: [pluginReact()],
   output: {
-    assetPrefix: "/general-site/",
-      publicPath: "/general-site/",
+    assetPrefix: "/",
+    publicPath: "/",
   },
   html: {
     title: 'Joseph Alvayero Portfolio',
@@ -14,19 +14,13 @@ export default defineConfig({
       viewport: 'width=device-width, initial-scale=1',
     },
     template: './public/index.html',
-    base: "",
   },
   source: {
     entry: {
       index: './src/index.tsx',
     },
   },
-server: {
-      historyApiFallback: true, 
-  headers: {
-    'Cache-Control': 'public, max-age=31536000, immutable'
-  }
-}
-
-
+  server: {
+    historyApiFallback: true,
+  },
 });
