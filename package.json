@@ -17,7 +17,8 @@
     "hint": "^7.1.13",
     "postcss": "^8.5.15",
     "postcss-preset-env": "^11.3.0",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
   },
   "hintConfig": {
     "connector": {
