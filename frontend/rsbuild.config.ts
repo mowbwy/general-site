@@ -5,13 +5,12 @@ export default defineConfig({
   plugins: [pluginReact()],
   output: {
     assetPrefix: "/general-site/",
-    publicPath: "/general-site/",
-      distPath: {
+    distPath: {
       root: "docs",
     },
   },
   html: {
-    title: 'Joseph Alvayero Portfolio',
+    title: "Joseph's Webpage",
     meta: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',

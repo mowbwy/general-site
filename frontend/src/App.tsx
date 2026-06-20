@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 export default function App() {
   return (
-<div
-  style={{
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingTop: "120px",
-    backgroundColor: "#ffffff",
-    fontFamily: "Arial, sans-serif",
-  }}
->
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingTop: "120px",
+        backgroundColor: "#ffffff",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
       {/* Logo */}
       <h1
         style={{
@@ -53,25 +53,23 @@ export default function App() {
         <NavButton to="/search" label="Search" />
         <NavButton to="/hero" label="Hero" />
         <NavButton to="/projects" label="Projects" />
-        
       </div>
 
       {/* Footer */}
-<footer
-  style={{
-    paddingBottom: "20px",
-    fontSize: "14px",
-    color: "#5f6368",
-  }}
->
-  Built by Joseph • Inspired by Google
-</footer>
-
+      <footer
+        style={{
+          paddingBottom: "20px",
+          fontSize: "14px",
+          color: "#5f6368",
+        }}
+      >
+        Built by Joseph • Inspired by Google
+      </footer>
     </div>
   );
 }
 
-function NavButton({ to, label }) {
+function NavButton({ to, label }: { to: string; label: string }) {
   return (
     <Link
       to={to}

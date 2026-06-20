@@ -4,7 +4,7 @@ import { getUsers } from "../api/client";
 import { Link } from "react-router-dom";
 
 export default function Users() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<any[]>([]);
 
   useEffect(() => {
     getUsers().then(setUsers);
@@ -23,9 +23,3 @@ export default function Users() {
     </div>
   );
 }
-
-useEffect(() => {
-  fetch("http://localhost:5000/api/hello")
-    .then(res => res.json())
-    .then(data => console.log(data));
-}, []);
