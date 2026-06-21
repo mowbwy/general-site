@@ -3,4 +3,4 @@ builder = "NIXPACKS"
 buildDir = "backend"
 
 [start]
-cmd = "gunicorn backend_project.wsgi"
+cmd = "gunicorn backend_project.wsgi --chdir backend --bind 0.0.0.0:$PORT"
