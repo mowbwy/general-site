@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 python-3.10.12
 
 <<<<<<< HEAD
@@ -6,3 +7,6 @@ djangorestframework
 gunicorn
 =======
 >>>>>>> 5c37c7ba90ebbcf73a0f02a8fad07c8c0c9ea308
+=======
+python-3.11
+>>>>>>> 6064054415643004d9e993fa95637ad6fe7c2ae9
