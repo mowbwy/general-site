@@ -1,4 +1,7 @@
 python-3.11.0
+<<<<<<< HEAD
 Django
 djangorestframework
 gunicorn
+=======
+>>>>>>> 5c37c7ba90ebbcf73a0f02a8fad07c8c0c9ea308
