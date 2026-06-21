@@ -1,6 +1,6 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "cd backend && pip install -r requirements.txt"
+buildCommand = "pip install -r snapshot-target-unpack/backend/requirements.txt"
 
 [start]
-cmd = "cd backend && gunicorn backend_project.wsgi"
+cmd = "gunicorn backend_project.wsgi --chdir snapshot-target-unpack/backend"
