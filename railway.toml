@@ -1,0 +1,6 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "cd backend && pip install -r requirements.txt"
+
+[start]
+cmd = "cd backend && gunicorn backend_project.wsgi"
