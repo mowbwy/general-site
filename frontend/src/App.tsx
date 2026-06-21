@@ -5,10 +5,20 @@ export default function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("https://general-site-gamma.vercel.app/api/hello")
+    console.log("Sending message to backend...");
+  }, []);
+  useEffect(() => {
+    fetch("https://general-site-gamma.vercel.app/api/message", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: "Joseph",
+        message: "Hello from the frontend!"
+      })
+    })
       .then(res => res.json())
-      .then(data => setMessage(data.message))
-      .catch(err => console.error(err));
+      .then(data => console.log("Backend reply:", data))
+      .catch(err => console.error("API error:", err));
   }, []);
   return (
     <div
