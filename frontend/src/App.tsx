@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function App() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("https://general-site-gamma.vercel.app/api/hello")
+      .then(res => res.json())
+      .then(data => setMessage(data.message))
+      .catch(err => console.error(err));
+  }, []);
   return (
     <div
       style={{
@@ -86,6 +94,6 @@ function NavButton({ to, label }: { to: string; label: string }) {
       }}
     >
       {label}
-    </Link>
+    </Link>    
   );
 }
