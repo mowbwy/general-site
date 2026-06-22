@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function App() {
   const [message, setMessage] = useState<string>("Loading...");
-
   useEffect(() => {
+
     const apiUrl = import.meta.env.VITE_API_URL;
 
     fetch(`${apiUrl}/api/hello`)
