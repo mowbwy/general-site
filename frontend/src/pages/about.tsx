@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./about.css";
 
@@ -58,3 +58,12 @@ export default function About() {
     </div>
   );
 }
+useEffect(() => {
+  const api = import.meta.env.VITE_API_URL;
+
+  fetch(`${api}/api/projects`)
+    .then(res => res.json())
+    .then(data => console.log("Projects:", data));
+}, []);
+
+

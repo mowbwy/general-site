@@ -1,5 +1,19 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
+class ContactForm(BaseModel):
+    name: str
+    email: str
+    message: str
+
+@app.post("/api/contact")
+def contact(form: ContactForm):
+    # For now, just return the data
+    return {
+        "status": "success",
+        "received": form.dict()
+    }
 
 app = FastAPI()
 
