@@ -65,7 +65,7 @@ export default function App() {
         <NavButton to="/search" label="Search" />
         <NavButton to="/hero" label="Hero" />
         <NavButton to="/projects" label="Projects" />
-<NavButton
+<button
   onClick={login}
   style={{
     padding: "12px 20px",
@@ -79,7 +79,7 @@ export default function App() {
   }}
 >
   Test Login
-</NavButton>
+</button>
 
       </div>
 
