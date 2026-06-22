@@ -147,20 +147,5 @@ function NavButton({ to, label }: { to: string; label: string }) {
       {label}
     </Link>    
   );
-async function login() {
-  const api = import.meta.env.VITE_API_URL;
-
-  const res = await fetch(`${api}/api/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      username: "admin",
-      password: "1234"
-    })
-  });
-
-  const data = await res.json();
-  console.log(data);
-}
 
 }
