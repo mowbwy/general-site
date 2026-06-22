@@ -2,25 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function App() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState<string>("Loading...");
 
   useEffect(() => {
-    console.log("Sending message to backend...");
-  }, []);
-  useEffect(() => {
-    fetch("https://general-site-gamma.vercel.app/api/message", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: "Joseph",
-        message: "Hello from the frontend!"
-      })
-    })
-      .then(res => res.json())
-      .then(data => console.log("Backend reply:", data))
-      .catch(err => console.error("API error:", err));
-  }, []);
-  return (
+    const apiUrl = import.meta.env.VITE_API_URL;
+
+    fetch(`${apiUrl}/api/hello`)
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message))
+      .catch((err) => {
+        console.error("API error:", err);
+        setMessage("Failed to connect to backend");
+      });
+  }, []);  return (
     <div
       style={{
         minHeight: "100vh",
