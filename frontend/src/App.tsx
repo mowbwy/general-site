@@ -65,6 +65,22 @@ export default function App() {
         <NavButton to="/search" label="Search" />
         <NavButton to="/hero" label="Hero" />
         <NavButton to="/projects" label="Projects" />
+<NavButton
+  onClick={login}
+  style={{
+    padding: "12px 20px",
+    borderRadius: "8px",
+    background: "#1A73E8",
+    color: "white",
+    border: "none",
+    fontSize: "16px",
+    cursor: "pointer",
+    marginTop: "20px"
+  }}
+>
+  Test Login
+</NavButton>
+
       </div>
 
       {/* Footer */}
@@ -96,6 +112,22 @@ async function sendContactForm() {
   const data = await res.json();
   console.log(data);
 }
+async function login() {
+  const api = import.meta.env.VITE_API_URL;
+
+  const res = await fetch(`${api}/api/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: "admin",
+      password: "1234"
+    })
+  });
+
+  const data = await res.json();
+  console.log("Login response:", data);
+}
+
 function NavButton({ to, label }: { to: string; label: string }) {
   return (
     <Link
