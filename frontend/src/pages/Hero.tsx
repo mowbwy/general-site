@@ -1,15 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Hero.css"; // optional if you want to separate CSS
 
 export default function About() {
   return (
-    <div>
-      <h1>Hero Page</h1>
-      <p>Hello, my name is Joseph and I'm a computer science student. My current
-        degree is a B.S. in Computer Science. I have experience in Java, Python, and web development. I have also done some work with machine learning and data science. I am passionate about technology and I am always looking for new opportunities to learn and grow.
-      I am currently pursuing my degree at South New Hampshire University so that I could get a better education.</p>
-      
-      <Link to="/">Back Home</Link>
-    </div>
+    <section className="hero">
+      <div className="hero-content">
+        <h1>Hello, I'm Joseph.</h1>
+
+        <p className="tagline">
+          Computer Science Student • Developer • ML Enthusiast
+        </p>
+
+        <p className="description">
+          I’m currently earning my B.S. in Computer Science at SNHU, where I’m
+          building strong foundations in software engineering, machine learning,
+          and modern development practices. I have experience in Java, Python,
+          web development, and data science. I’m passionate about technology and
+          always looking for opportunities to learn and grow.
+        </p>
+
+        <div className="hero-buttons">
+          <Link to="/" className="btn primary">Back Home</Link>
+          <Link to="/projects" className="btn secondary">View Projects</Link>
+        </div>
+      </div>
+    </section>
   );
 }
