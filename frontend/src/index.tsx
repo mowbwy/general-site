@@ -8,6 +8,7 @@ import Hero from "./pages/Hero";
 import Search from "./pages/Search";
 import Projects from "./pages/Projects";
 import GSearch from "./pages/GSearch";
+import Login from "./pages/login";
 
 const router = createBrowserRouter(
   [
@@ -17,6 +18,8 @@ const router = createBrowserRouter(
     { path: "/search", element: <Search /> },
     { path: "/projects", element: <Projects /> },
     { path: "/gsearch", element: <GSearch /> },
+    { path: "/login", element: <Login /> },
+
     { path: "*", element: <App /> },
 
   ],

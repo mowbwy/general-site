@@ -65,22 +65,8 @@ export default function App() {
         <NavButton to="/search" label="Search" />
         <NavButton to="/hero" label="Hero" />
         <NavButton to="/projects" label="Projects" />
-<button
-  onClick={login}
-  style={{
-    padding: "12px 20px",
-    borderRadius: "8px",
-    background: "#1A73E8",
-    color: "white",
-    border: "none",
-    fontSize: "16px",
-    cursor: "pointer",
-    marginTop: "20px"
-  }}
->
-  Test Login
-</button>
-
+        <NavButton to="/login" label="Login"/>
+        <NavButton to="/gsearch" label="Google Search"/>
       </div>
 
       {/* Footer */}
