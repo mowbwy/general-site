@@ -1,8 +1,9 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
+import { plugin } from 'mongoose';
 
 export default defineConfig({
-  plugins: [pluginReact()],
+  plugins: [pluginReact()], 
   output: {
     assetPrefix: "/general-site/",
     distPath: {
