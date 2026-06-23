@@ -4,7 +4,8 @@ import { pluginReact } from '@rsbuild/plugin-react';
 export default defineConfig({
   plugins: [pluginReact()], 
   output: {
-    assetPrefix: "/general-site",
+    assetPrefix: "/general-site/",
+    publicPath: '/general-site/',
     distPath: {
       root: "docs",
     },
