@@ -9,6 +9,7 @@ export default function Login() {
     e.preventDefault();
     console.log("Login clicked", { username, password });
     const api = import.meta.env.VITE_API_URL;
+    console.log("API URL:", api);
 
     const res = await fetch(`${api}/api/login`, {
       method: "POST",
