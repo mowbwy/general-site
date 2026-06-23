@@ -14,7 +14,7 @@ export default function About() {
 
       <div className="about-content">
         <img
-          src="/profile.jpg"
+          src="/general-site/profile.jpg"
           alt="Profile"
           className="profile-pic"
         />
