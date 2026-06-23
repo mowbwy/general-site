@@ -109,7 +109,7 @@ async function sendContactForm() {
   const api = "https://general-site-production.up.railway.app";
 
 
-  const res = await fetch(`${api}/api/contact`, {
+  const res = await fetch(`https://general-site-production.up.railway.app/api/contact`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -124,9 +124,9 @@ async function sendContactForm() {
 }
 
 async function login() {
-  const api = import.meta.env.VITE_API_URL;
+  const api = "https://general-site-production.up.railway.app";
 
-  const res = await fetch(`${api}/api/login`, {
+  const res = await fetch(`https://general-site-production.up.railway.app/api/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
