@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./contact.css";
 
@@ -31,15 +31,7 @@ export default function Contact() {
           GitHub
         </a>
       </div>
-     <Link to="/">Back Home</Link>
+      <Link to="/">Back Home</Link>
     </section>
   );
-  useEffect(() => {
-  const api = import.meta.env.VITE_API_URL;
-
-  fetch(`${api}/api/projects`)
-    .then(res => res.json())
-    .then(data => console.log("Projects:", data));
-}, []);
-
 }
