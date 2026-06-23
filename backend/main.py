@@ -36,13 +36,15 @@ def contact(form: ContactForm):
         "status": "success",
         "received": form.dict()
     }
+
+# Login model
 class LoginForm(BaseModel):
     username: str
     password: str
 
+# Login route
 @app.post("/api/login")
 def login(form: LoginForm):
     if form.username == "admin" and form.password == "1234":
         return {"status": "success", "token": "fake-jwt-token"}
     return {"status": "error", "message": "Invalid credentials"}
-
