@@ -83,6 +83,23 @@
   font-weight: bold;
   text-align: center;
 }
+.error-text {
+  color: #d93025;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.error-input {
+  border-color: #d93025 !important;
+  background: #ffeceb;
+}
+
+.contact-form button:disabled {
+  background: #9bbcf7;
+  cursor: not-allowed;
+}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(12px); }

@@ -9,16 +9,61 @@ export default function Contact() {
     message: ""
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
   const [status, setStatus] = useState("");
+  const [sending, setSending] = useState(false);
+
+  // Validation logic
+  const validate = () => {
+    let valid = true;
+    const newErrors = { name: "", email: "", message: "" };
+
+    if (!form.name.trim()) {
+      newErrors.name = "Name is required.";
+      valid = false;
+    }
+
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required.";
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      newErrors.email = "Enter a valid email address.";
+      valid = false;
+    }
+
+    if (!form.message.trim()) {
+      newErrors.message = "Message is required.";
+      valid = false;
+    } else if (form.message.length < 20) {
+      newErrors.message = "Message must be at least 20 characters.";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+
+    // Clear error as user types
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus("");
+
+    if (!validate()) return;
+
+    setSending(true);
     setStatus("Sending...");
 
     try {
@@ -42,6 +87,8 @@ export default function Contact() {
     } catch (err) {
       setStatus("Error sending message.");
     }
+
+    setSending(false);
   };
 
   return (
@@ -61,8 +108,9 @@ export default function Contact() {
           placeholder="Your Name"
           value={form.name}
           onChange={handleChange}
-          required
+          className={errors.name ? "error-input" : ""}
         />
+        {errors.name && <p className="error-text">{errors.name}</p>}
 
         <input
           name="email"
@@ -70,19 +118,21 @@ export default function Contact() {
           placeholder="Your Email"
           value={form.email}
           onChange={handleChange}
-          required
+          className={errors.email ? "error-input" : ""}
         />
+        {errors.email && <p className="error-text">{errors.email}</p>}
 
         <textarea
           name="message"
           placeholder="Your Message"
           value={form.message}
           onChange={handleChange}
-          required
+          className={errors.message ? "error-input" : ""}
         />
+        {errors.message && <p className="error-text">{errors.message}</p>}
 
-        <button type="submit" className="contact-btn">
-          Send Message
+        <button type="submit" className="contact-btn" disabled={sending}>
+          {sending ? "Sending..." : "Send Message"}
         </button>
       </form>
 
