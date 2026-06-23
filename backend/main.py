@@ -2,10 +2,16 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from users import router
+import resend
+import os
 
 app = FastAPI()
 
+# Load API key from Railway environment variables
+resend.api_key = os.getenv("RESEND_API_KEY")
+
 app.include_router(router, prefix="/api")
+
 # CORS
 app.add_middleware(
     CORSMiddleware,
@@ -31,9 +37,25 @@ class ContactForm(BaseModel):
     email: str
     message: str
 
-# Contact route
+# Contact route WITH EMAIL NOTIFICATION
 @app.post("/api/contact")
 def contact(form: ContactForm):
+
+    # Send email to yourself
+    resend.Emails.send(
+        {
+            "from": "Portfolio Contact <onboarding@resend.dev>",
+            "to": ["jalvayero2@toromail.csudh.edu"],
+            "subject": f"New Contact Form Message from {form.name}",
+            "html": f"""
+                <h2>New Contact Form Submission</h2>
+                <p><strong>Name:</strong> {form.name}</p>
+                <p><strong>Email:</strong> {form.email}</p>
+                <p><strong>Message:</strong><br>{form.message}</p>
+            """
+        }
+    )
+
     return {
         "status": "success",
         "received": form.dict()
