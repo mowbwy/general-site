@@ -1,3 +1,5 @@
+import { Link } from "storybook/internal/router";
+
 export default function Home() {
   return (
     <div
@@ -78,6 +80,7 @@ export default function Home() {
         >
           I'm Feeling Curious
         </button>
+      <Link to="/">Back Home</Link>
       </div>
 
       {/* Footer */}

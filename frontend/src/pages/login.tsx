@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "storybook/internal/router";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -93,6 +94,7 @@ export default function Login() {
         >
           Login
         </button>
+      <Link to="/">Back Home</Link>
       </form>
 
       {message && (
