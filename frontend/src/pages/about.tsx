@@ -14,7 +14,7 @@ export default function About() {
 
       <div className="about-content">
         <img
-          src="profile.jpg"
+          src="https://github.com/mowbwy/general-site/blob/409803e3bc52fbf17e24581feed155bc38e8d8ec/profile.jpg?raw=true"
           alt="Profile"
           className="profile-pic"
         />
