@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "storybook/internal/router";
+import { useState } from "react";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -8,96 +7,97 @@ export default function Login() {
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
+
     const api = import.meta.env.VITE_API_URL;
 
-    try {
-      const res = await fetch(`${api}/api/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
+    const res = await fetch(`${api}/api/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password })
+    });
 
-      const data = await res.json();
-      if (data.status === "success") {
-        setMessage("✅ Login successful!");
-        console.log("Token:", data.token);
-      } else {
-        setMessage("❌ Invalid credentials");
-      }
-    } catch (err) {
-      console.error("Login error:", err);
-      setMessage("⚠️ Connection failed");
+    const data = await res.json();
+
+    if (data.status === "success") {
+      setMessage("Login successful");
+      localStorage.setItem("token", data.token);
+    } else {
+      setMessage("Invalid username or password");
     }
   }
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#ffffff",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      <h1 style={{ color: "#1A73E8", marginBottom: "20px" }}>
-        Joseph’s Login Page
-      </h1>
-
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      background: "#f5f5f5"
+    }}>
       <form
         onSubmit={handleLogin}
         style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "12px",
-          width: "100%",
-          maxWidth: "300px",
+          width: "350px",
+          padding: "30px",
+          borderRadius: "12px",
+          background: "white",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
         }}
       >
+        <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+          Login
+        </h2>
+
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           style={{
-            padding: "10px",
+            width: "100%",
+            padding: "12px",
+            marginBottom: "12px",
             borderRadius: "8px",
-            border: "1px solid #ccc",
-            fontSize: "16px",
+            border: "1px solid #ccc"
           }}
         />
+
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           style={{
-            padding: "10px",
+            width: "100%",
+            padding: "12px",
+            marginBottom: "12px",
             borderRadius: "8px",
-            border: "1px solid #ccc",
-            fontSize: "16px",
+            border: "1px solid #ccc"
           }}
         />
+
         <button
           type="submit"
           style={{
+            width: "100%",
             padding: "12px",
             borderRadius: "8px",
-            backgroundColor: "#1A73E8",
+            background: "#1A73E8",
             color: "white",
-            fontSize: "16px",
             border: "none",
             cursor: "pointer",
+            fontSize: "16px"
           }}
         >
           Login
         </button>
+
+        {message && (
+          <p style={{ marginTop: "15px", textAlign: "center" }}>
+            {message}
+          </p>
+        )}
       </form>
-      {message && (
-        <p style={{ marginTop: "20px", color: "#5f6368" }}>{message}</p>
-      )}
     </div>
   );
 }
