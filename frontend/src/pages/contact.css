@@ -55,6 +55,34 @@
   border-color: #555;
   transform: translateY(-3px);
 }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 30px auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  height: 140px;
+  resize: none;
+}
+
+.status {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(12px); }
