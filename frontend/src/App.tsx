@@ -106,7 +106,8 @@ function NavButton({ to, label }: { to: string; label: string }) {
 }
 
 async function sendContactForm() {
-  const api = import.meta.env.VITE_API_URL;
+  const api = "https://general-site-production.up.railway.app";
+
 
   const res = await fetch(`${api}/api/contact`, {
     method: "POST",
