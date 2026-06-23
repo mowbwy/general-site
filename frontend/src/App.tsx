@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function App() {
@@ -103,6 +103,8 @@ function NavButton({ to, label }: { to: string; label: string }) {
       {label}
     </Link>    
   );
+}
+
 async function sendContactForm() {
   const api = import.meta.env.VITE_API_URL;
 
@@ -119,6 +121,7 @@ async function sendContactForm() {
   const data = await res.json();
   console.log(data);
 }
+
 async function login() {
   const api = import.meta.env.VITE_API_URL;
 
@@ -133,5 +136,4 @@ async function login() {
 
   const data = await res.json();
   console.log("Login response:", data);
-}
 }

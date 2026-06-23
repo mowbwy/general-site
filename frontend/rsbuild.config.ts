@@ -6,6 +6,7 @@ export default defineConfig({
   output: {
     assetPrefix: "/general-site",
     publicPath: '/general-site',
+    cleanDistPath: true,
     distPath: {
       root: "../docs",
     },
