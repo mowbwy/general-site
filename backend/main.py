@@ -46,3 +46,8 @@ def login(form: LoginForm):
         return {"status": "success", "token": "fake-jwt-token"}
 
     return {"status": "error", "message": "Invalid credentials"}
+@app.post("/api/login")
+async def login(data: dict):
+    if data["username"] == "admin" and data["password"] == "1234":
+        return {"status": "success", "token": "fake-jwt-token"}
+    return {"status": "error"}
