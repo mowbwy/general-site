@@ -7,7 +7,8 @@ export default function App() {
 
     const apiUrl = import.meta.env.VITE_API_URL;
 
-    fetch(`https://general-site-production.up.railway.app/hello`)
+    fetch(`fetch("https://general-site-production.up.railway.app/api/hello")
+`)
       .then((res) => res.json())
       .then((data) => setMessage(data.message))
       .catch((err) => {
