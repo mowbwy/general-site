@@ -80,9 +80,8 @@ export default function Home() {
         >
           I'm Feeling Curious
         </button>
-      <Link to="/">Back Home</Link>
       </div>
-
+      <Link to="/">Back Home</Link>
       {/* Footer */}
       <footer
         style={{

@@ -94,9 +94,8 @@ export default function Login() {
         >
           Login
         </button>
-      <Link to="/">Back Home</Link>
       </form>
-
+      <Link to="/">Back Home</Link>
       {message && (
         <p style={{ marginTop: "20px", color: "#5f6368" }}>{message}</p>
       )}
