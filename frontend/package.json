@@ -8,7 +8,7 @@
     "copy:docs": "node ../scripts/copy-dist-to-docs.js",
     "check": "biome check --write",
     "dev": "rsbuild dev",
-    "deploy": "npm run build && git add docs && git commit -m \"Deploy\" && git push",
+    "deploy": "npm run build && git -C .. add docs && git -C .. commit -m \"Deploy\" && git -C .. push",
     "format": "biome format --write",
     "lint": "rslint",
     "preview": "rsbuild preview",

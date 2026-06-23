@@ -7,7 +7,7 @@ export default defineConfig({
     assetPrefix: "/general-site/",
     publicPath: '/general-site/',
     distPath: {
-      root: "docs",
+      root: "../docs",
     },
   },
   html: {
