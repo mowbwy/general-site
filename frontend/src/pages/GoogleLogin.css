@@ -1,0 +1,94 @@
+.google-login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f3f4;
+}
+
+.google-card {
+  width: 360px;
+  padding: 40px 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.google-avatar {
+  width: 60px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.google-subtitle {
+  font-size: 14px;
+  color: #5f6368;
+  margin-bottom: 24px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 1px #1a73e8;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #1669c1;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.google-error {
+  color: #d93025;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.google-links {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.google-links a {
+  font-size: 14px;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.google-links a:hover {
+  text-decoration: underline;
+}

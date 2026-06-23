@@ -1,106 +1,74 @@
 import { useState } from "react";
+import "./GoogleLogin.css";
 
-export default function Login() {
-  const [username, setUsername] = useState("");
+export default function GoogleLogin() {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  async function handleLogin(e: React.FormEvent) {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Login clicked", { username, password });
-const api = "https://general-site-production.up.railway.app";
+    setLoading(true);
+    setError("");
 
-    console.log("API URL:", api);
+    try {
+      // TODO: Connect to your FastAPI backend
+      console.log("Logging in:", email, password);
 
-    const res = await fetch(`${api}/api/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password })
-    });
-
-    const data = await res.json();
-
-    if (data.status === "success") {
-      setMessage("Login successful");
-      localStorage.setItem("token", data.token);
-    } else {
-      setMessage("Invalid username or password");
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    } catch {
+      setError("Incorrect email or password");
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-      background: "#f5f5f5"
-    }}>
-      <form
-        onSubmit={handleLogin}
-        style={{
-          width: "350px",
-          padding: "30px",
-          borderRadius: "12px",
-          background: "white",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
-        }}
-      >
-        <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
-          Login
-        </h2>
-
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "12px",
-            marginBottom: "12px",
-            borderRadius: "8px",
-            border: "1px solid #ccc"
-          }}
+    <div className="google-login-container">
+      <div className="google-card">
+        <img
+          src="https://www.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png"
+          alt="avatar"
+          className="google-avatar"
         />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "12px",
-            marginBottom: "12px",
-            borderRadius: "8px",
-            border: "1px solid #ccc"
-          }}
-        />
+        <h2>Sign in</h2>
+        <p className="google-subtitle">Use your account</p>
 
-        <button
-          type="submit"
-          style={{
-            width: "100%",
-            padding: "12px",
-            borderRadius: "8px",
-            background: "#1A73E8",
-            color: "white",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "16px"
-          }}
-        >
-          Login
-        </button>
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Email or phone"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        {message && (
-          <p style={{ marginTop: "15px", textAlign: "center" }}>
-            {message}
-          </p>
-        )}
-      </form>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          {error && <p className="google-error">{error}</p>}
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Signing in..." : "Next"}
+          </button>
+        </form>
+
+        <div className="google-links">
+          <a href="#">Forgot email?</a>
+          <a href="#">Create account</a>
+        </div>
+      </div>
     </div>
-    
   );
+
 }
+
+
