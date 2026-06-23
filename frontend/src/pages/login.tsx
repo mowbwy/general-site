@@ -7,7 +7,7 @@ export default function Login() {
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-
+    console.log("Login clicked", { username, password });
     const api = import.meta.env.VITE_API_URL;
 
     const res = await fetch(`${api}/api/login`, {
