@@ -19,7 +19,7 @@ fake_users = [
 def get_users():
     return fake_users
 
-@router.get("/users/{user_id}")
+@router.get("https://general-site-production.up.railway.app/api/users{user_id}")
 def get_user(user_id: int):
     for user in fake_users:
         if user.id == user_id:
