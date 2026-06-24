@@ -15,11 +15,12 @@ app.include_router(router, prefix="/api")
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://mowbwy.github.io"],  # your GitHub Pages domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Root route
 @app.get("/")
