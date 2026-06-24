@@ -15,7 +15,7 @@ fake_users = [
     User(id=2, username="admin", email="admin@example.com")
 ]
 
-@router.get("/users")
+@router.get("https://general-site-production.up.railway.app/api/users")
 def get_users():
     return fake_users
 
