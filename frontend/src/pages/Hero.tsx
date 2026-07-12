@@ -13,7 +13,7 @@ export default function About() {
         </p>
 
         <p className="description">
-          I’m currently earning my B.S. in Computer Science at SNHU, where I’m
+          I’m currently earning my M.S. in Computer Science at SNHU, where I’m
           building strong foundations in software engineering, machine learning,
           and modern development practices. I have experience in Java, Python,
           web development, and data science. I’m passionate about technology and
