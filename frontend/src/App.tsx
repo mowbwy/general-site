@@ -31,17 +31,28 @@ export default function App() {
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <h1
-        style={{
-          fontSize: "56px",
-          fontWeight: "500",
-          marginBottom: "20px",
-          color: "#202124",
-          letterSpacing: "-1px",
-        }}
-      >
-        Joseph Alvayero <br><span style={{ color: "#1A73E8" }}>Software Engineering Student | Aspiring Software Developer | Python & Machine Learning Enthusiast</span></br>
-      </h1>
+<h1
+  style={{
+    fontSize: "56px",
+    fontWeight: "500",
+    marginBottom: "20px",
+    color: "#202124",
+    letterSpacing: "-1px",
+  }}
+>
+  Joseph Alvayero
+  <span
+    style={{
+      display: "block",
+      color: "#1A73E8",
+      fontSize: "24px",
+      marginTop: "8px",
+      fontWeight: "400",
+    }}
+  >
+    Software Engineering Student | Aspiring Software Developer | Python & Machine Learning Enthusiast
+  </span>
+</h1>
 
       <p
         style={{

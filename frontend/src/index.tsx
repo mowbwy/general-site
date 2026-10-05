@@ -19,7 +19,9 @@ const router = createBrowserRouter([
   { path: "/gsearch", element: <GSearch /> },
   { path: "/login", element: <Login /> },
   { path: "*", element: <App /> },
-]);
+], {
+  basename: "/general-site",
+});
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

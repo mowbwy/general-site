@@ -3,13 +3,13 @@ import { pluginReact } from '@rsbuild/plugin-react';
 
 export default defineConfig({
   plugins: [pluginReact()],
-  output: {
-    assetPrefix: "/",
-    cleanDistPath: true,
-    distPath: {
-      root: "../docs",
-    },
+output: {
+  assetPrefix: "/general-site/",
+  cleanDistPath: true,
+  distPath: {
+    root: "../docs",
   },
+},
   html: {
     title: "Joseph's Webpage",
     meta: {
