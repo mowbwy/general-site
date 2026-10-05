@@ -48,7 +48,7 @@ src="https://raw.githubusercontent.com/mowbwy/general-site/66dacd81a4823d4a73164
 </a>
 <a href="https://raw.githubusercontent.com/mowbwy/general-site/0c29a2f507ad166f9d03e9a56c8ebdd53c9c5458/Resume%20(1).pdf"
 target="_blank"><img alt="Resume Logo" width="240" height="240"
-src="https://raw.githubusercontent.com/mowbwy/general-site/363f6c6b0106203f99cdb47766d1455070218615/resume.png"/>
+src="https://raw.githubusercontent.com/mowbwy/general-site/761e98cd94f281e5fd7450eb6f342eadaeab0016/resume.png"/>
 </a>
 </p>
 </header>
