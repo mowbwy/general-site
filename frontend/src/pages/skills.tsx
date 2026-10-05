@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Skills() {
   return (
     <div>
@@ -19,6 +20,8 @@ Areas:
 • Software Engineering
 • Data Analysis
       </p>
-    </div>
+      <Link to="/">Back Home</Link>
+          </div>
+    
   );
 }
