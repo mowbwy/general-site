@@ -44,7 +44,7 @@ src="https://raw.githubusercontent.com/mowbwy/general-site/main/assets/linkedinl
 </a>
 
 <a href="https://www.github.com/mowbwy" target="_blank"><img alt="GitHub Logo"
-src="https://raw.githubusercontent.com/mowbwy/general-site/main/assets/githublogo.png"/>
+src="https://raw.githubusercontent.com/mowbwy/general-site/363f6c6b0106203f99cdb47766d1455070218615/githublogo.png"/>
 </a>
 </p>
 </header>
