@@ -40,11 +40,11 @@ export default function App() {
         }}>
 <p>
 <a href="https://www.linkedin.com/in/joseph-a-a68646217/" target="_blank"><img alt="LinkedIn Logo"
-src="https://github.com/mowbwy/general-site/blob/73657335c4f2c125631a0e1d0dd72b543cb315d3/public/linkedin%20logo.png"/>
+src="public/linkedin logo.png"/>
 </a>
 
 <a href="https://www.github.com/mowbwy" target="_blank"><img alt="GitHub Logo"
-src="https://github.com/mowbwy/general-site/blob/4a9e3e4f43226f52184ed9148a2b71204dffbed0/public/github%20logo.png"/>
+src="public/github logo.png"/>
 </a>
 </p>
    </header>
