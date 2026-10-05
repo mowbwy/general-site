@@ -2,23 +2,24 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./contact.css";
 
+const API_BASE_URL = ((import.meta as any).env?.VITE_API_URL ?? "http://127.0.0.1:8000") as string;
+
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const [errors, setErrors] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const [status, setStatus] = useState("");
   const [sending, setSending] = useState(false);
 
-  // Validation logic
   const validate = () => {
     let valid = true;
     const newErrors = { name: "", email: "", message: "" };
@@ -52,8 +53,6 @@ export default function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-
-    // Clear error as user types
     setErrors({ ...errors, [e.target.name]: "" });
   };
 
@@ -67,14 +66,11 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
-      const res = await fetch(
-        "https://general-site-production.up.railway.app/api/contact",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form)
-        }
-      );
+      const res = await fetch(`${API_BASE_URL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
       const data = await res.json();
 
@@ -100,7 +96,6 @@ export default function Contact() {
         projects, or just talking tech. Feel free to reach out anytime.
       </p>
 
-      {/* Contact Form */}
       <form onSubmit={handleSubmit} className="contact-form">
         <input
           name="name"
@@ -138,26 +133,14 @@ export default function Contact() {
 
       {status && <p className="status">{status}</p>}
 
-      {/* Existing Buttons */}
       <div className="contact-buttons">
-        <a
-          href="mailto:jalvayero2@toromail.csudh.edu"
-          className="contact-btn"
-        >
+        <a href="mailto:jalvayero2@toromail.csudh.edu" className="contact-btn">
           Email
         </a>
-        <a
-          href="https://www.linkedin.com/in/joseph-a-a68646217/"
-          target="_blank"
-          className="contact-btn"
-        >
+        <a href="https://www.linkedin.com/in/joseph-a-a68646217/" target="_blank" className="contact-btn">
           LinkedIn
         </a>
-        <a
-          href="https://github.com/mowbwy"
-          target="_blank"
-          className="contact-btn"
-        >
+        <a href="https://github.com/mowbwy" target="_blank" className="contact-btn">
           GitHub
         </a>
       </div>

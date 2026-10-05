@@ -10,23 +10,16 @@ import Projects from "./pages/Projects";
 import GSearch from "./pages/GSearch";
 import Login from "./pages/login";
 
-const router = createBrowserRouter(
-  [
-    { path: "/about", element: <About /> },
-    { path: "/contact", element: <Contact /> },
-    { path: "/hero", element: <Hero /> },
-    { path: "/search", element: <Search /> },
-    { path: "/projects", element: <Projects /> },
-    { path: "/gsearch", element: <GSearch /> },
-    { path: "/login", element: <Login /> },
-
-    { path: "*", element: <App /> },
-
-  ],
-  {
-    basename: "/general-site",
-  }
-);
+const router = createBrowserRouter([
+  { path: "/about", element: <About /> },
+  { path: "/contact", element: <Contact /> },
+  { path: "/hero", element: <Hero /> },
+  { path: "/search", element: <Search /> },
+  { path: "/projects", element: <Projects /> },
+  { path: "/gsearch", element: <GSearch /> },
+  { path: "/login", element: <Login /> },
+  { path: "*", element: <App /> },
+]);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

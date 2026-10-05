@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+const API_BASE_URL = ((import.meta as any).env?.VITE_API_URL ?? "http://127.0.0.1:8000") as string;
 export default function App() {
   const [message, setMessage] = useState<string>("Loading...");
+
   useEffect(() => {
-
-    const apiUrl = import.meta.env.VITE_API_URL;
-
-    fetch(`https://general-site-production.up.railway.app/api/hello`)
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
+    fetch(`${API_BASE_URL}/api/hello/`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => setMessage(data.message ?? "Hello from backend"))
       .catch((err) => {
         console.error("API error:", err);
         setMessage("Failed to connect to backend");
       });
-  }, []);  return (
+  }, []);
+
+  return (
     <div
       style={{
         minHeight: "100vh",
@@ -27,7 +31,6 @@ export default function App() {
         fontFamily: "Arial, sans-serif",
       }}
     >
-      {/* Logo */}
       <h1
         style={{
           fontSize: "56px",
@@ -40,7 +43,6 @@ export default function App() {
         Joseph Alvayero's <span style={{ color: "#1A73E8" }}>Website</span>
       </h1>
 
-      {/* Tagline */}
       <p
         style={{
           fontSize: "18px",
@@ -48,9 +50,9 @@ export default function App() {
           marginBottom: "40px",
         }}
       >
-        A clean, simple Google‑style homepage
+        A clean, simple Google-style homepage
       </p>
-      {/* Navigation Buttons */}
+
       <div
         style={{
           display: "flex",
@@ -65,11 +67,10 @@ export default function App() {
         <NavButton to="/search" label="Search" />
         <NavButton to="/hero" label="Hero" />
         <NavButton to="/projects" label="Projects" />
-        <NavButton to="/login" label="Login"/>
-        <NavButton to="/gsearch" label="Google Search"/>
+        <NavButton to="/login" label="Login" />
+        <NavButton to="/gsearch" label="Google Search" />
       </div>
 
-      {/* Footer */}
       <footer
         style={{
           paddingBottom: "20px",
@@ -82,7 +83,6 @@ export default function App() {
     </div>
   );
 }
-
 
 function NavButton({ to, label }: { to: string; label: string }) {
   return (
@@ -101,40 +101,6 @@ function NavButton({ to, label }: { to: string; label: string }) {
       }}
     >
       {label}
-    </Link>    
+    </Link>
   );
-}
-
-async function sendContactForm() {
-  const api = "https://general-site-production.up.railway.app";
-
-
-  const res = await fetch(`https://general-site-production.up.railway.app/api/contact`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: "Joseph",
-      email: "test@example.com",
-      message: "Hello from frontend!"
-    })
-  });
-
-  const data = await res.json();
-  console.log(data);
-}
-
-async function login() {
-  const api = "https://general-site-production.up.railway.app";
-
-  const res = await fetch(`https://general-site-production.up.railway.app/api/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      username: "admin",
-      password: "1234"
-    })
-  });
-
-  const data = await res.json();
-  console.log("Login response:", data);
 }
