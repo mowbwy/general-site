@@ -46,6 +46,10 @@ src="https://raw.githubusercontent.com/mowbwy/general-site/66dacd81a4823d4a73164
 <a href="https://www.github.com/mowbwy" target="_blank"><img alt="GitHub Logo" width="240" height="240"
 src="https://raw.githubusercontent.com/mowbwy/general-site/66dacd81a4823d4a73164643280fa6f3b8f64f5c/githublogo.png"/>
 </a>
+<a href="https://raw.githubusercontent.com/mowbwy/general-site/0c29a2f507ad166f9d03e9a56c8ebdd53c9c5458/Resume%20(1).pdf"
+target="_blank"><img alt="Resume Logo" width="240" height="240"
+src="https://raw.githubusercontent.com/mowbwy/general-site/66dacd81a4823d4a73164643280fa6f3b8f64f5c/resume.png"/>
+</a>
 </p>
 </header>
 <h1
