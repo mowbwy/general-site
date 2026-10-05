@@ -6,7 +6,7 @@ export default function App() {
   const [message, setMessage] = useState<string>("Loading...");
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/hello/`)
+      fetch(`${API_BASE_URL}/api/hello/`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
