@@ -74,6 +74,7 @@ export default function App() {
         }}
       >
         <NavButton to="/about" label="About" />
+        <NavButton to="/skills" label="Skills" />
         <NavButton to="/contact" label="Contact" />
         <NavButton to="/search" label="Search" />
         <NavButton to="/hero" label="Hero" />
