@@ -40,7 +40,7 @@ export default function App() {
           letterSpacing: "-1px",
         }}
       >
-        Joseph Alvayero's <span style={{ color: "#1A73E8" }}>Website</span>
+        Joseph Alvayero <br><span style={{ color: "#1A73E8" }}>Software Engineering Student | Aspiring Software Developer | Python & Machine Learning Enthusiast</span></br>
       </h1>
 
       <p
