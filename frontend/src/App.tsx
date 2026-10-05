@@ -17,8 +17,17 @@ export default function App() {
         setMessage("Failed to connect to backend");
       });
   }, []);
+<p>
+<a href="https://www.linkedin.com/in/joseph-a-a68646217/" target="_blank"><img alt="LinkedIn Logo"
+src="https://github.com/mowbwy/general-site/blob/4a9e3e4f43226f52184ed9148a2b71204dffbed0/public/linkedin%20logo.png"/>
+</a>
 
+<a href="https://www.github.com/mowbwy" target="_blank"><img alt="GitHub Logo"
+src="https://github.com/mowbwy/general-site/blob/4a9e3e4f43226f52184ed9148a2b71204dffbed0/public/github%20logo.png"/>
+</a>
+</p>
   return (
+   
     <div
       style={{
         minHeight: "100vh",
