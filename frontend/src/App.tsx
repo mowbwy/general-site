@@ -40,7 +40,7 @@ export default function App() {
     letterSpacing: "-1px",
   }}
 >
-  Joseph Alvayero
+  <center>Joseph Alvayero</center>
   <span
     style={{
       display: "block",
