@@ -39,11 +39,11 @@ export default function App() {
           color: "#5f6368",
         }}>
 <p>
-<a href="https://www.linkedin.com/in/joseph-a-a68646217/" target="_blank"><img alt="LinkedIn Logo"
+<a href="https://www.linkedin.com/in/joseph-a-a68646217/" target="_blank"><img alt="LinkedIn Logo" width="24" height="24"
 src="https://raw.githubusercontent.com/mowbwy/general-site/66dacd81a4823d4a73164643280fa6f3b8f64f5c/linkedinlogo.png"/>
 </a>
 
-<a href="https://www.github.com/mowbwy" target="_blank"><img alt="GitHub Logo"
+<a href="https://www.github.com/mowbwy" target="_blank"><img alt="GitHub Logo" width="24" height="24"
 src="https://raw.githubusercontent.com/mowbwy/general-site/66dacd81a4823d4a73164643280fa6f3b8f64f5c/githublogo.png"/>
 </a>
 </p>
